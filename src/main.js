@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import * as directives from '@/directives'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
@@ -16,6 +16,9 @@ import '@/icons' // icon
 import '@/permission' // permission control
 
 Vue.use(ElementUI, { locale })
+Object.keys(directives).forEach(key => {
+    Vue.directive(key, directives[key])
+})
 
 Vue.config.productionTip = false
 

@@ -1,4 +1,4 @@
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getToken, setToken, removeToken, setTimeStamp } from '@/utils/auth'
 import { login, getUserInfo, getUserDetailById } from '@/api/user'
 const state = {
     token: getToken(),
@@ -16,7 +16,7 @@ const mutations = {
     setUserInfo(state, result) {
         state.userInfo = result
     },
-    reomveUserInfo(state) {
+    removeUserInfo(state) {
         state.userInfo = {}
     }
 }
@@ -24,6 +24,8 @@ const actions = {
     async login(context, data) {
         const result = await login(data)
         context.commit('setToken', result)
+            //拿到token，登录成功
+        setTimeStamp()
 
     },
     async getUserInfo(context) {
@@ -32,6 +34,11 @@ const actions = {
         const baseResult = {...result, ...baseInfo }
         context.commit('setUserInfo', baseResult)
         return result
+    },
+    //登出操作
+    logout(context) {
+        context.commit('removeToken')
+        context.commit('removeUserInfo')
     }
 }
 
