@@ -1,10 +1,8 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
-    <page-tools :showBefore="true">
-      <span slot="before" >2222</span>
-      <el-button slot="after" type="primary" >导入excel</el-button>
-    </page-tools>
+    <upload-excel />
+
   </div>
 </template>
 
