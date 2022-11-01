@@ -17,6 +17,7 @@ import Components from '@/components'
 import '@/icons' // icon
 import '@/permission' // permission control
 import * as filters from '@/filters'
+import checkPermission from '@/mixin/checkPermission'
 
 Vue.use(ElementUI, { locale })
 Object.keys(filters).forEach(key => {
@@ -26,6 +27,7 @@ Object.keys(directives).forEach(key => {
     Vue.directive(key, directives[key])
 })
 Vue.use(Components) // 注册自己的插件
+Vue.mixin(checkPermission)
 Vue.config.productionTip = false
 
 new Vue({
