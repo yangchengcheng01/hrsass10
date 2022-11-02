@@ -8,6 +8,7 @@ import attendancesRouter from './modules/attendances'
 import salarysRouter from './modules/salarys'
 import settingRouter from './modules/setting'
 import socialRouter from './modules/social'
+import userRouter from './modules/user'
 
 Vue.use(Router)
 
@@ -74,6 +75,7 @@ export const constantRoutes = [{
                 import ('@/views/import')
         }]
     },
+    userRouter
 
 
     // 404 page must be placed at the end !!!

@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-import req from 'express/lib/request'
+
 export function getDepartments() {
     return request({
         url: '/company/department'

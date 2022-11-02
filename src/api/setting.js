@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-import req from 'express/lib/request'
+
 export function getRoleList(params) {
     return request({
         url: '/sys/role',
