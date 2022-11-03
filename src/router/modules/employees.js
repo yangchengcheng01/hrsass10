@@ -5,6 +5,7 @@ export default {
     component: Layout,
     children: [{
             path: '',
+            name: 'employees',
             component: () =>
                 import ('@/views/employees'),
             meta: {

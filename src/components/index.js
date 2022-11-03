@@ -9,6 +9,10 @@ import UploadExcel from './UploadExcel'
 import PageTools from './PageTools'
 import ImageUpload from './ImageUpload'
 import Print from 'vue-print-nb'
+import ThemePicker from './ThemePicker'
+import LangSelect from './lang'
+import TagsView from './TagsView'
+// import ScreenFull from './ScreenFull'
 
 export default {
     install(Vue) {
@@ -17,5 +21,10 @@ export default {
         Vue.component('UploadExcel', UploadExcel)
         Vue.component('ImageUpload', ImageUpload)
         Vue.use(Print) // 注册导入上传组件
+        Vue.component('ThemePicker', ThemePicker)
+        Vue.component('LangSelect', LangSelect)
+        Vue.component('TagsView', TagsView)
+
+        // Vue.component('ScreenFull', ScreenFull)
     }
 }
